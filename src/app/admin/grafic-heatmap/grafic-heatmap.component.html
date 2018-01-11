@@ -1,0 +1,14 @@
+<div class="box box-primary">
+    <div class="box-header ui-sortable-handle" style="cursor: move;">
+        <h3 class="box-title">Retention Heatmap</h3>
+        <div class="box-tools pull-right" data-toggle="tooltip" title="" data-original-title="User retention per cohort in relation to other cohorts. Green indicates better retention.">
+          <div class="btn-group" data-toggle="btn-toggle">
+            <button class="btn btn-primary btn-sm" (click)="onGenerateReport()" type="button">Generate Retention Heatmap
+              </button>
+          </div>
+        </div>
+      </div>
+      <div class="tab-content no-padding">
+          <div class="chart tab-pane active"  style="position: relative; height: 300px;" [ng2-highcharts]="chartOptions"></div>
+        </div>
+</div>

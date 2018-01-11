@@ -1,0 +1,13 @@
+<div class="box box-success">
+    <div class="box-header ui-sortable-handle" style="cursor: move;">
+        <h3 class="box-title">Product Market Fit</h3>
+        <div class="box-tools pull-right" data-toggle="tooltip" title="" data-original-title="User retention per cohort and how it changes as months progress over time.">
+          <div class="btn-group" data-toggle="btn-toggle">
+            <button class="btn btn-success btn-sm" (click)="onGenerateReport()" type="button">Generate Retention</button>
+          </div>
+        </div>
+      </div>
+      <div class="tab-content no-padding">
+          <div class="chart tab-pane active"  style="position: relative; height: 300px;" [ng2-highcharts]="chartOptions"></div>
+        </div>
+</div>
