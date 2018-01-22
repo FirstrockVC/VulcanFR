@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { ConvertService } from '../shared/convert.service';
 import swal from 'sweetalert2';
 import * as _ from 'lodash';
@@ -6,15 +6,20 @@ import * as _ from 'lodash';
 @Component({
   selector: 'grafic-mau',
   templateUrl: './grafic-mau.component.html',
-  providers: [ConvertService]
+  providers: [ConvertService],
+  inputs:['loadGraphic']
 })
-export class GraficMAUComponent implements OnInit {
+export class GraficMAUComponent implements OnChanges {
 
   public chartOptions;
+  public loadGraphic;
 
   constructor(public convertService: ConvertService) { }
 
-  ngOnInit() {
+  ngOnChanges(changes: SimpleChanges) {
+    if (this.loadGraphic){
+      this.onGenerateReport();
+    }
   }
 
   public onGenerateReport(){

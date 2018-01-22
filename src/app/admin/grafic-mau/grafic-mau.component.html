@@ -1,11 +1,6 @@
 <div class="box box-warning">
     <div class="box-header ui-sortable-handle" style="cursor: move;">
-        <h3 class="box-title">MAU LTV by Cohort</h3>
-        <div class="box-tools pull-right" data-toggle="tooltip" title="" data-original-title="This plot shows the cumulative (months/week) active per user in a given cohort at a given age.">
-          <div class="btn-group" data-toggle="btn-toggle">
-            <button class="btn btn-warning btn-sm" (click)="onGenerateReport()" type="button">Generate MAU</button>
-          </div>
-        </div>
+        <h3 class="box-title"  data-toggle="tooltip" title="" data-original-title="This plot shows the cumulative (months/week) active per user in a given cohort at a given age.">MAU LTV by Cohort</h3>
       </div>
       <div class="tab-content no-padding">
           <div class="chart tab-pane active"  style="position: relative; height: 300px;" [ng2-highcharts]="chartOptions"></div>

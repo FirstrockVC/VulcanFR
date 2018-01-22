@@ -12,6 +12,8 @@ import { GraficRetentionComponent } from './grafic-retention/grafic-retention.co
 import { GraficMAUComponent } from './grafic-mau/grafic-mau.component';
 import { GraficHeatMapComponent } from './grafic-heatmap/grafic-heatmap.component';
 import { GraficLayerComponent } from './grafic-layer/grafic-layer.component';
+import { GraficTopUsersComponent } from './grafic-topusers/grafic-topusers.component';
+
 import { FormsModule, ReactiveFormsModule }  from '@angular/forms';
 import { Ng2HighchartsModule } from 'ng2-highcharts';
 
@@ -33,7 +35,8 @@ import { Ng2HighchartsModule } from 'ng2-highcharts';
     GraficMAUComponent,
     GraficRetentionComponent,
     GraficHeatMapComponent,
-    GraficLayerComponent
+    GraficLayerComponent,
+    GraficTopUsersComponent
   ],
   exports: [AdminComponent]
 })

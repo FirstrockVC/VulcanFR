@@ -39,14 +39,14 @@
       <!-- Left col -->
       <section class="col-lg-6 connectedSortable">
         <!-- Custom tabs (Charts with tabs)-->
-          <grafic-kip></grafic-kip>
+          <grafic-kip [loadGraphic]="loadGraphic"></grafic-kip>
         <!-- /.nav-tabs-custom -->
       </section>
       <!-- /.Left col -->
       <!-- right col (We are only adding the ID to make the widgets sortable)-->
       <section class="col-lg-6 connectedSortable">
         <!-- solid sales graph -->
-       <grafic-retention></grafic-retention>
+       <grafic-retention [loadGraphic]="loadGraphic"></grafic-retention>
         <!-- /.box -->
       </section>
       <!-- right col -->
@@ -58,14 +58,14 @@
         <!-- Left col -->
         <section class="col-lg-6 connectedSortable">
           <!-- Custom tabs (Charts with tabs)-->
-            <grafic-mau></grafic-mau>
+            <grafic-mau [loadGraphic]="loadGraphic"></grafic-mau>
           <!-- /.nav-tabs-custom -->
         </section>
         <!-- /.Left col -->
         <!-- right col (We are only adding the ID to make the widgets sortable)-->
         <section class="col-lg-6 connectedSortable">
             <!-- solid sales graph -->
-          <grafic-heatmap></grafic-heatmap>
+          <grafic-heatmap [loadGraphic]="loadGraphic"></grafic-heatmap>
             <!-- /.box -->
           </section>
           <!-- right col -->
@@ -77,12 +77,22 @@
         <!-- Left col -->
         <section class="col-lg-12 connectedSortable">
           <!-- Custom tabs (Charts with tabs)-->
-            <grafic-layer></grafic-layer>
+            <grafic-layer [loadGraphic]="loadGraphic"></grafic-layer>
           <!-- /.nav-tabs-custom -->
         </section>
         <!-- /.Left col -->
       </div>
       <!-- /.row (main row) -->
+
+      <div class="row">
+        <!-- Left col -->
+        <section class="col-lg-12 connectedSortable">
+          <!-- Custom tabs (Charts with tabs)
+            <grafic-topusers></grafic-topusers>-->
+          <!-- /.nav-tabs-custom -->
+        </section>
+        <!-- /.Left col -->
+      </div>
 
   </section>
   <!-- /.content -->

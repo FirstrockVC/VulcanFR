@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, SimpleChanges } from '@angular/core';
 import { ConvertService } from '../shared/convert.service';
 import swal from 'sweetalert2';
 import * as _ from 'lodash';
@@ -6,15 +6,21 @@ import * as _ from 'lodash';
 @Component({
   selector: 'grafic-layer',
   templateUrl: './grafic-layer.component.html',
-  providers: [ConvertService]
+  providers: [ConvertService],
+  inputs:['loadGraphic']
 })
-export class GraficLayerComponent implements OnInit {
+
+export class GraficLayerComponent implements OnChanges {
 
   public chartOptions;
+  public loadGraphic;
 
   constructor(public convertService: ConvertService) { }
 
-  ngOnInit() {
+  ngOnChanges(changes: SimpleChanges) {
+    if (this.loadGraphic){
+      this.onGenerateReport();
+    }
   }
 
   public onGenerateReport(){

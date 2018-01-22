@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, SimpleChanges } from '@angular/core';
 import { ConvertService } from '../shared/convert.service';
 import swal from 'sweetalert2';
 import * as _ from 'lodash';
@@ -7,15 +7,20 @@ import { months } from 'moment';
 @Component({
   selector: 'grafic-heatmap',
   templateUrl: './grafic-heatmap.component.html',
-  providers: [ConvertService]
+  providers: [ConvertService],
+  inputs:['loadGraphic']
 })
-export class GraficHeatMapComponent implements OnInit {
+export class GraficHeatMapComponent implements OnChanges {
 
   public chartOptions;
+  public loadGraphic;
 
   constructor(public convertService: ConvertService) { }
 
-  ngOnInit() {
+  ngOnChanges(changes: SimpleChanges) {
+    if (this.loadGraphic){
+      this.onGenerateReport();
+    }
   }
 
   public onGenerateReport(){
