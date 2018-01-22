@@ -83,8 +83,9 @@ var AdminComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__grafic_mau_grafic_mau_component__ = __webpack_require__("../../../../../src/app/admin/grafic-mau/grafic-mau.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__grafic_heatmap_grafic_heatmap_component__ = __webpack_require__("../../../../../src/app/admin/grafic-heatmap/grafic-heatmap.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__grafic_layer_grafic_layer_component__ = __webpack_require__("../../../../../src/app/admin/grafic-layer/grafic-layer.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_ng2_highcharts__ = __webpack_require__("../../../../ng2-highcharts/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__grafic_topusers_grafic_topusers_component__ = __webpack_require__("../../../../../src/app/admin/grafic-topusers/grafic-topusers.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_ng2_highcharts__ = __webpack_require__("../../../../ng2-highcharts/index.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -92,6 +93,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -116,8 +118,8 @@ var AdminModule = /** @class */ (function () {
             imports: [
                 __WEBPACK_IMPORTED_MODULE_8__angular_common__["e" /* CommonModule */],
                 __WEBPACK_IMPORTED_MODULE_0__routing_routing_module__["a" /* RoutingModule */],
-                __WEBPACK_IMPORTED_MODULE_14__angular_forms__["a" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_15_ng2_highcharts__["a" /* Ng2HighchartsModule */]
+                __WEBPACK_IMPORTED_MODULE_15__angular_forms__["a" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_16_ng2_highcharts__["a" /* Ng2HighchartsModule */]
             ],
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_6__admin_component__["a" /* AdminComponent */],
@@ -130,7 +132,8 @@ var AdminModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_11__grafic_mau_grafic_mau_component__["a" /* GraficMAUComponent */],
                 __WEBPACK_IMPORTED_MODULE_10__grafic_retention_grafic_retention_component__["a" /* GraficRetentionComponent */],
                 __WEBPACK_IMPORTED_MODULE_12__grafic_heatmap_grafic_heatmap_component__["a" /* GraficHeatMapComponent */],
-                __WEBPACK_IMPORTED_MODULE_13__grafic_layer_grafic_layer_component__["a" /* GraficLayerComponent */]
+                __WEBPACK_IMPORTED_MODULE_13__grafic_layer_grafic_layer_component__["a" /* GraficLayerComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__grafic_topusers_grafic_topusers_component__["a" /* GraficTopUsersComponent */]
             ],
             exports: [__WEBPACK_IMPORTED_MODULE_6__admin_component__["a" /* AdminComponent */]]
         })
@@ -187,7 +190,7 @@ var ControlSidebarComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/admin/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"content-wrapper\">\n  <!-- Content Header (Page header) -->\n  <section class=\"content-header\">\n    <h1>\n      Dashboard\n      <small>Control panel</small>\n    </h1>\n    <ol class=\"breadcrumb\">\n      <li><a href=\"#\"><i class=\"fa fa-dashboard\"></i> Home</a></li>\n      <li class=\"active\">Dashboard</li>\n    </ol>\n  </section>\n\n  <!-- Main content -->\n  <section class=\"content\">\n    <!-- Small boxes (Stat box) -->\n    <div class=\"row\">\n      <!-- ./col -->\n      <div class=\"col-lg-12 col-xs-12\">\n        <!-- small box -->\n            <form>\n                <div class=\"form-group\" style=\"text-align: left;\">\n                  <div>\n                      <div class=\"input-group input-file\" name=\"Fichier1\">\n                          <input [ngModelOptions]=\"{standalone: true}\" type=\"file\" class=\"form-control\" [(ngModel)]=\"data\" (change)=\"onFileChange($event)\" placeholder='Choose a file...' />\n                          <span class=\"input-group-btn\">\n                                <button class=\"btn btn-primary btn-reset\" (click)=\"onUpload()\" type=\"button\">Upload</button>\n                          </span>\n                      </div>\n                  </div>\n                </div>\n              </form>\n      </div>\n      <!-- ./col -->\n    </div>\n    <!-- /.row -->\n    <!-- Main row -->\n    <div class=\"row\">\n      <!-- Left col -->\n      <section class=\"col-lg-6 connectedSortable\">\n        <!-- Custom tabs (Charts with tabs)-->\n          <grafic-kip></grafic-kip>\n        <!-- /.nav-tabs-custom -->\n      </section>\n      <!-- /.Left col -->\n      <!-- right col (We are only adding the ID to make the widgets sortable)-->\n      <section class=\"col-lg-6 connectedSortable\">\n        <!-- solid sales graph -->\n       <grafic-retention></grafic-retention>\n        <!-- /.box -->\n      </section>\n      <!-- right col -->\n    </div>\n    <!-- /.row (main row) -->\n\n     <!-- Main row -->\n     <div class=\"row\">\n        <!-- Left col -->\n        <section class=\"col-lg-6 connectedSortable\">\n          <!-- Custom tabs (Charts with tabs)-->\n            <grafic-mau></grafic-mau>\n          <!-- /.nav-tabs-custom -->\n        </section>\n        <!-- /.Left col -->\n        <!-- right col (We are only adding the ID to make the widgets sortable)-->\n        <section class=\"col-lg-6 connectedSortable\">\n            <!-- solid sales graph -->\n          <grafic-heatmap></grafic-heatmap>\n            <!-- /.box -->\n          </section>\n          <!-- right col -->\n      </div>\n      <!-- /.row (main row) -->\n\n       <!-- Main row -->\n     <div class=\"row\">\n        <!-- Left col -->\n        <section class=\"col-lg-12 connectedSortable\">\n          <!-- Custom tabs (Charts with tabs)-->\n            <grafic-layer></grafic-layer>\n          <!-- /.nav-tabs-custom -->\n        </section>\n        <!-- /.Left col -->\n      </div>\n      <!-- /.row (main row) -->\n\n  </section>\n  <!-- /.content -->\n</div>\n"
+module.exports = "<div class=\"content-wrapper\">\n  <!-- Content Header (Page header) -->\n  <section class=\"content-header\">\n    <h1>\n      Dashboard\n      <small>Control panel</small>\n    </h1>\n    <ol class=\"breadcrumb\">\n      <li><a href=\"#\"><i class=\"fa fa-dashboard\"></i> Home</a></li>\n      <li class=\"active\">Dashboard</li>\n    </ol>\n  </section>\n\n  <!-- Main content -->\n  <section class=\"content\">\n    <!-- Small boxes (Stat box) -->\n    <div class=\"row\">\n      <!-- ./col -->\n      <div class=\"col-lg-12 col-xs-12\">\n        <!-- small box -->\n            <form>\n                <div class=\"form-group\" style=\"text-align: left;\">\n                  <div>\n                      <div class=\"input-group input-file\" name=\"Fichier1\">\n                          <input [ngModelOptions]=\"{standalone: true}\" type=\"file\" class=\"form-control\" [(ngModel)]=\"data\" (change)=\"onFileChange($event)\" placeholder='Choose a file...' />\n                          <span class=\"input-group-btn\">\n                                <button class=\"btn btn-primary btn-reset\" (click)=\"onUpload()\" type=\"button\">Upload</button>\n                          </span>\n                      </div>\n                  </div>\n                </div>\n              </form>\n      </div>\n      <!-- ./col -->\n    </div>\n    <!-- /.row -->\n    <!-- Main row -->\n    <div class=\"row\">\n      <!-- Left col -->\n      <section class=\"col-lg-6 connectedSortable\">\n        <!-- Custom tabs (Charts with tabs)-->\n          <grafic-kip [loadGraphic]=\"loadGraphic\"></grafic-kip>\n        <!-- /.nav-tabs-custom -->\n      </section>\n      <!-- /.Left col -->\n      <!-- right col (We are only adding the ID to make the widgets sortable)-->\n      <section class=\"col-lg-6 connectedSortable\">\n        <!-- solid sales graph -->\n       <grafic-retention [loadGraphic]=\"loadGraphic\"></grafic-retention>\n        <!-- /.box -->\n      </section>\n      <!-- right col -->\n    </div>\n    <!-- /.row (main row) -->\n\n     <!-- Main row -->\n     <div class=\"row\">\n        <!-- Left col -->\n        <section class=\"col-lg-6 connectedSortable\">\n          <!-- Custom tabs (Charts with tabs)-->\n            <grafic-mau [loadGraphic]=\"loadGraphic\"></grafic-mau>\n          <!-- /.nav-tabs-custom -->\n        </section>\n        <!-- /.Left col -->\n        <!-- right col (We are only adding the ID to make the widgets sortable)-->\n        <section class=\"col-lg-6 connectedSortable\">\n            <!-- solid sales graph -->\n          <grafic-heatmap [loadGraphic]=\"loadGraphic\"></grafic-heatmap>\n            <!-- /.box -->\n          </section>\n          <!-- right col -->\n      </div>\n      <!-- /.row (main row) -->\n\n       <!-- Main row -->\n     <div class=\"row\">\n        <!-- Left col -->\n        <section class=\"col-lg-12 connectedSortable\">\n          <!-- Custom tabs (Charts with tabs)-->\n            <grafic-layer [loadGraphic]=\"loadGraphic\"></grafic-layer>\n          <!-- /.nav-tabs-custom -->\n        </section>\n        <!-- /.Left col -->\n      </div>\n      <!-- /.row (main row) -->\n\n      <div class=\"row\">\n        <!-- Left col -->\n        <section class=\"col-lg-12 connectedSortable\">\n          <!-- Custom tabs (Charts with tabs)\n            <grafic-topusers></grafic-topusers>-->\n          <!-- /.nav-tabs-custom -->\n        </section>\n        <!-- /.Left col -->\n      </div>\n\n  </section>\n  <!-- /.content -->\n</div>\n"
 
 /***/ }),
 
@@ -215,6 +218,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var DashboardComponent = /** @class */ (function () {
     function DashboardComponent(convertService) {
         this.convertService = convertService;
+        this.loadGraphic = false;
     }
     DashboardComponent.prototype.ngOnInit = function () {
         AdminLTE.init();
@@ -233,12 +237,14 @@ var DashboardComponent = /** @class */ (function () {
     };
     DashboardComponent.prototype.onUpload = function () {
         var _this = this;
+        this.loadGraphic = false;
         var cohorts = [];
         var reader = new FileReader();
         reader.readAsText(this.file);
         reader.onload = function () {
             var text = reader.result;
             _this.convertService.uploadData(text).subscribe(function (result) {
+                _this.loadGraphic = true;
                 __WEBPACK_IMPORTED_MODULE_2_sweetalert2___default()({
                     title: 'Success',
                     text: 'The data was imported correctly',
@@ -314,7 +320,7 @@ var FooterComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/admin/grafic-heatmap/grafic-heatmap.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"box box-primary\">\n    <div class=\"box-header ui-sortable-handle\" style=\"cursor: move;\">\n        <h3 class=\"box-title\">Retention Heatmap</h3>\n        <div class=\"box-tools pull-right\" data-toggle=\"tooltip\" title=\"\" data-original-title=\"User retention per cohort in relation to other cohorts. Green indicates better retention.\">\n          <div class=\"btn-group\" data-toggle=\"btn-toggle\">\n            <button class=\"btn btn-primary btn-sm\" (click)=\"onGenerateReport()\" type=\"button\">Generate Retention Heatmap\n              </button>\n          </div>\n        </div>\n      </div>\n      <div class=\"tab-content no-padding\">\n          <div class=\"chart tab-pane active\"  style=\"position: relative; height: 300px;\" [ng2-highcharts]=\"chartOptions\"></div>\n        </div>\n</div>\n"
+module.exports = "<div class=\"box box-primary\">\n    <div class=\"box-header ui-sortable-handle\" style=\"cursor: move;\">\n        <h3 class=\"box-title\"  data-toggle=\"tooltip\" title=\"\" data-original-title=\"User retention per cohort in relation to other cohorts. Green indicates better retention.\">Retention Heatmap</h3>\n      </div>\n      <div class=\"tab-content no-padding\">\n          <div class=\"chart tab-pane active\"  style=\"position: relative; height: 300px;\" [ng2-highcharts]=\"chartOptions\"></div>\n        </div>\n</div>\n"
 
 /***/ }),
 
@@ -346,7 +352,10 @@ var GraficHeatMapComponent = /** @class */ (function () {
     function GraficHeatMapComponent(convertService) {
         this.convertService = convertService;
     }
-    GraficHeatMapComponent.prototype.ngOnInit = function () {
+    GraficHeatMapComponent.prototype.ngOnChanges = function (changes) {
+        if (this.loadGraphic) {
+            this.onGenerateReport();
+        }
     };
     GraficHeatMapComponent.prototype.onGenerateReport = function () {
         var _this = this;
@@ -469,7 +478,8 @@ var GraficHeatMapComponent = /** @class */ (function () {
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
             selector: 'grafic-heatmap',
             template: __webpack_require__("../../../../../src/app/admin/grafic-heatmap/grafic-heatmap.component.html"),
-            providers: [__WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */]],
+            inputs: ['loadGraphic']
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */]) === "function" && _a || Object])
     ], GraficHeatMapComponent);
@@ -484,7 +494,7 @@ var GraficHeatMapComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/admin/grafic-kip/grafic-kip.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"box box-primary\">\n    <div class=\"box-header ui-sortable-handle\" style=\"cursor: move;\">\n        <h3 class=\"box-title\">KPI Growth Top-line</h3>\n        <div class=\"box-tools pull-right\" data-toggle=\"tooltip\" title=\"\" data-original-title=\"KIP\">\n          <div class=\"btn-group\" data-toggle=\"btn-toggle\">\n            <button class=\"btn btn-primary btn-sm\" (click)=\"onGenerateReport()\" type=\"button\">Generate KIP</button>\n          </div>\n        </div>\n      </div>\n      <div class=\"tab-content no-padding\">\n          <div class=\"chart tab-pane active\"  style=\"position: relative; height: 300px;\" [ng2-highcharts]=\"chartOptions\"></div>\n        </div>\n</div>\n"
+module.exports = "<div class=\"box box-primary\">\n    <div class=\"box-header ui-sortable-handle\" style=\"cursor: move;\">\n        <h3 class=\"box-title\">KPI Growth Top-line</h3>\n      </div>\n      <div class=\"tab-content no-padding\">\n          <div class=\"chart tab-pane active\"  style=\"position: relative; height: 300px;\" [ng2-highcharts]=\"chartOptions\"></div>\n        </div>\n</div>\n"
 
 /***/ }),
 
@@ -516,7 +526,10 @@ var GraficKIPComponent = /** @class */ (function () {
     function GraficKIPComponent(convertService) {
         this.convertService = convertService;
     }
-    GraficKIPComponent.prototype.ngOnInit = function () {
+    GraficKIPComponent.prototype.ngOnChanges = function (changes) {
+        if (this.loadGraphic) {
+            this.onGenerateReport();
+        }
     };
     GraficKIPComponent.prototype.onGenerateReport = function () {
         var _this = this;
@@ -560,7 +573,8 @@ var GraficKIPComponent = /** @class */ (function () {
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
             selector: 'grafic-kip',
             template: __webpack_require__("../../../../../src/app/admin/grafic-kip/grafic-kip.component.html"),
-            providers: [__WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */]],
+            inputs: ['loadGraphic']
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */]) === "function" && _a || Object])
     ], GraficKIPComponent);
@@ -575,7 +589,7 @@ var GraficKIPComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/admin/grafic-layer/grafic-layer.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"box box-danger\">\n    <div class=\"box-header ui-sortable-handle\" style=\"cursor: move;\">\n        <h3 class=\"box-title\">KPI Growth X-Ray</h3>\n        <div class=\"box-tools pull-right\" data-toggle=\"tooltip\" title=\"\" data-original-title=\"KIP\">\n          <div class=\"btn-group\" data-toggle=\"btn-toggle\">\n            <button class=\"btn btn-danger btn-sm\" (click)=\"onGenerateReport()\" type=\"button\">Generate KIP</button>\n          </div>\n        </div>\n      </div>\n      <div class=\"tab-content no-padding\">\n          <div class=\"chart tab-pane active\"  style=\"position: relative; height: 300px;\" [ng2-highcharts]=\"chartOptions\"></div>\n        </div>\n</div>\n"
+module.exports = "<div class=\"box box-danger\">\n    <div class=\"box-header ui-sortable-handle\" style=\"cursor: move;\">\n        <h3 class=\"box-title\">KPI Growth X-Ray</h3>\n      </div>\n      <div class=\"tab-content no-padding\">\n          <div class=\"chart tab-pane active\"  style=\"position: relative; height: 300px;\" [ng2-highcharts]=\"chartOptions\"></div>\n        </div>\n</div>\n"
 
 /***/ }),
 
@@ -607,7 +621,10 @@ var GraficLayerComponent = /** @class */ (function () {
     function GraficLayerComponent(convertService) {
         this.convertService = convertService;
     }
-    GraficLayerComponent.prototype.ngOnInit = function () {
+    GraficLayerComponent.prototype.ngOnChanges = function (changes) {
+        if (this.loadGraphic) {
+            this.onGenerateReport();
+        }
     };
     GraficLayerComponent.prototype.onGenerateReport = function () {
         var _this = this;
@@ -654,7 +671,8 @@ var GraficLayerComponent = /** @class */ (function () {
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
             selector: 'grafic-layer',
             template: __webpack_require__("../../../../../src/app/admin/grafic-layer/grafic-layer.component.html"),
-            providers: [__WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */]],
+            inputs: ['loadGraphic']
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */]) === "function" && _a || Object])
     ], GraficLayerComponent);
@@ -669,7 +687,7 @@ var GraficLayerComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/admin/grafic-mau/grafic-mau.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"box box-warning\">\n    <div class=\"box-header ui-sortable-handle\" style=\"cursor: move;\">\n        <h3 class=\"box-title\">MAU LTV by Cohort</h3>\n        <div class=\"box-tools pull-right\" data-toggle=\"tooltip\" title=\"\" data-original-title=\"This plot shows the cumulative (months/week) active per user in a given cohort at a given age.\">\n          <div class=\"btn-group\" data-toggle=\"btn-toggle\">\n            <button class=\"btn btn-warning btn-sm\" (click)=\"onGenerateReport()\" type=\"button\">Generate MAU</button>\n          </div>\n        </div>\n      </div>\n      <div class=\"tab-content no-padding\">\n          <div class=\"chart tab-pane active\"  style=\"position: relative; height: 300px;\" [ng2-highcharts]=\"chartOptions\"></div>\n        </div>\n</div>\n"
+module.exports = "<div class=\"box box-warning\">\n    <div class=\"box-header ui-sortable-handle\" style=\"cursor: move;\">\n        <h3 class=\"box-title\"  data-toggle=\"tooltip\" title=\"\" data-original-title=\"This plot shows the cumulative (months/week) active per user in a given cohort at a given age.\">MAU LTV by Cohort</h3>\n      </div>\n      <div class=\"tab-content no-padding\">\n          <div class=\"chart tab-pane active\"  style=\"position: relative; height: 300px;\" [ng2-highcharts]=\"chartOptions\"></div>\n        </div>\n</div>\n"
 
 /***/ }),
 
@@ -701,7 +719,10 @@ var GraficMAUComponent = /** @class */ (function () {
     function GraficMAUComponent(convertService) {
         this.convertService = convertService;
     }
-    GraficMAUComponent.prototype.ngOnInit = function () {
+    GraficMAUComponent.prototype.ngOnChanges = function (changes) {
+        if (this.loadGraphic) {
+            this.onGenerateReport();
+        }
     };
     GraficMAUComponent.prototype.onGenerateReport = function () {
         var _this = this;
@@ -745,7 +766,8 @@ var GraficMAUComponent = /** @class */ (function () {
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
             selector: 'grafic-mau',
             template: __webpack_require__("../../../../../src/app/admin/grafic-mau/grafic-mau.component.html"),
-            providers: [__WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */]],
+            inputs: ['loadGraphic']
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */]) === "function" && _a || Object])
     ], GraficMAUComponent);
@@ -760,7 +782,7 @@ var GraficMAUComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/admin/grafic-retention/grafic-retention.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"box box-success\">\n    <div class=\"box-header ui-sortable-handle\" style=\"cursor: move;\">\n        <h3 class=\"box-title\">Product Market Fit</h3>\n        <div class=\"box-tools pull-right\" data-toggle=\"tooltip\" title=\"\" data-original-title=\"User retention per cohort and how it changes as months progress over time.\">\n          <div class=\"btn-group\" data-toggle=\"btn-toggle\">\n            <button class=\"btn btn-success btn-sm\" (click)=\"onGenerateReport()\" type=\"button\">Generate Retention</button>\n          </div>\n        </div>\n      </div>\n      <div class=\"tab-content no-padding\">\n          <div class=\"chart tab-pane active\"  style=\"position: relative; height: 300px;\" [ng2-highcharts]=\"chartOptions\"></div>\n        </div>\n</div>\n"
+module.exports = "<div class=\"box box-success\">\n    <div class=\"box-header ui-sortable-handle\" style=\"cursor: move;\">\n        <h3 class=\"box-title\" data-toggle=\"tooltip\" title=\"\" data-original-title=\"User retention per cohort and how it changes as months progress over time.\">Product Market Fit</h3>\n      </div>\n      <div class=\"tab-content no-padding\">\n          <div class=\"chart tab-pane active\"  style=\"position: relative; height: 300px;\" [ng2-highcharts]=\"chartOptions\"></div>\n        </div>\n</div>\n"
 
 /***/ }),
 
@@ -792,7 +814,10 @@ var GraficRetentionComponent = /** @class */ (function () {
     function GraficRetentionComponent(convertService) {
         this.convertService = convertService;
     }
-    GraficRetentionComponent.prototype.ngOnInit = function () {
+    GraficRetentionComponent.prototype.ngOnChanges = function (changes) {
+        if (this.loadGraphic) {
+            this.onGenerateReport();
+        }
     };
     GraficRetentionComponent.prototype.onGenerateReport = function () {
         var _this = this;
@@ -840,7 +865,8 @@ var GraficRetentionComponent = /** @class */ (function () {
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
             selector: 'grafic-retention',
             template: __webpack_require__("../../../../../src/app/admin/grafic-retention/grafic-retention.component.html"),
-            providers: [__WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */]],
+            inputs: ['loadGraphic']
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */]) === "function" && _a || Object])
     ], GraficRetentionComponent);
@@ -849,6 +875,68 @@ var GraficRetentionComponent = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=grafic-retention.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/admin/grafic-topusers/grafic-topusers.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"box box-success\">\n    <div class=\"box-header ui-sortable-handle\" style=\"cursor: move;\">\n        <h3 class=\"box-title\">Top Users</h3>\n      </div>\n    <div class=\"box-body\">\n        <div class=\"input-group input-file\" name=\"Fichier1\">\n            <input [ngModelOptions]=\"{standalone: true}\" type=\"file\" class=\"form-control\" [(ngModel)]=\"data\" (change)=\"onFileChange($event)\" placeholder='Choose a file...' />\n            <span class=\"input-group-btn\">\n                  <button class=\"btn btn-primary btn-reset\" (click)=\"onUpload()\" type=\"button\">Upload</button>\n            </span>\n        </div>\n        <div class =\"row\">\n            <div class=\"col-lg-8\">\n              <div class=\"table-responsive\" style=\"height: 300px;margin: 15px;\">\n                  <table class=\"table no-margin\">\n                      <thead>\n                      <tr>\n                        <th>#</th>\n                        <th>User</th>\n                      </tr>\n                      </thead>\n                      <tbody>\n                      <tr *ngFor=\"let item of data; let i = index\">\n                          <td>{{i + 1}}</td>\n                        <td>{{item.top_users}}</td>\n                      </tr>\n                      </tbody>\n                    </table>\n              </div>\n            </div>\n            <div class=\"col-lg-4\">\n              <div>\n                  <ul class=\"chart-legend clearfix\" *ngIf=\"data.length > 0\">\n                      <li><i class=\"fa fa-circle text-red\"> 1</i> {{data[0].top_users}}</li>\n                      <li><i class=\"fa fa-circle text-green\"> 2 </i> {{data[1].top_users}}</li>\n                      <li><i class=\"fa fa-circle text-yellow\"> 3 </i> {{data[2].top_users}}</li>\n                      <li><i class=\"fa fa-circle text-aqua\"> 4 </i> {{data[3].top_users}}</li>\n                      <li><i class=\"fa fa-circle text-light-blue\"> 5 </i> {{data[4].top_users}}</li>\n                   </ul>\n              </div>\n            </div>\n        </div>\n      </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/admin/grafic-topusers/grafic-topusers.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_csvtojson__ = __webpack_require__("../../../../csvtojson/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_csvtojson___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_csvtojson__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GraficTopUsersComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var GraficTopUsersComponent = /** @class */ (function () {
+    function GraficTopUsersComponent() {
+        this.data = [];
+        this.topUsers = [];
+    }
+    GraficTopUsersComponent.prototype.ngOnInit = function () {
+    };
+    GraficTopUsersComponent.prototype.onFileChange = function (event) {
+        this.file = event.target.files[0];
+    };
+    GraficTopUsersComponent.prototype.onUpload = function () {
+        var _this = this;
+        this.data = [];
+        this.topUsers = [];
+        var reader = new FileReader();
+        reader.readAsText(this.file);
+        reader.onload = function () {
+            var text = reader.result;
+            __WEBPACK_IMPORTED_MODULE_1_csvtojson__().fromString(text)
+                .on('json', function (jsonObj) {
+                _this.data.push(jsonObj);
+            })
+                .on('done', function (error) {
+            });
+        };
+    };
+    GraficTopUsersComponent = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+            selector: 'grafic-topusers',
+            template: __webpack_require__("../../../../../src/app/admin/grafic-topusers/grafic-topusers.component.html")
+        })
+    ], GraficTopUsersComponent);
+    return GraficTopUsersComponent;
+}());
+
+//# sourceMappingURL=grafic-topusers.component.js.map
 
 /***/ }),
 
@@ -1252,6 +1340,27 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 /***/ }),
 
 /***/ 0:
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 1:
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 2:
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 3:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("../../../../../src/main.ts");
@@ -1259,5 +1368,5 @@ module.exports = __webpack_require__("../../../../../src/main.ts");
 
 /***/ })
 
-},[0]);
+},[3]);
 //# sourceMappingURL=main.bundle.js.map

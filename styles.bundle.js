@@ -1015,7 +1015,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 5:
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__("../../../../../src/styles.css");
@@ -1035,5 +1035,5 @@ module.exports = __webpack_require__("../../../../admin-lte/dist/css/skins/_all-
 
 /***/ })
 
-},[2]);
+},[5]);
 //# sourceMappingURL=styles.bundle.js.map
