@@ -25,7 +25,7 @@ export class GraficKIPComponent implements OnChanges {
   public onGenerateReport(){
     this.convertService.convert('/convertkip').subscribe((result) => {
      this.chartOptions = {
-      chart: { type: 'spline', zoomType: 'x'},
+      chart: { type: 'line', zoomType: 'x'},
       xAxis: {
         type: 'datetime',
         categories: _.map(result, 'period'),
@@ -39,7 +39,7 @@ export class GraficKIPComponent implements OnChanges {
         }
       },
       plotOptions: {
-        spline: {
+        line: {
             marker: {
                 enabled: false
             },

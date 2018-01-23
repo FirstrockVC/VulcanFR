@@ -29,7 +29,7 @@ export class GraficRetentionComponent implements OnChanges {
         chart.push({ name: value, data: _.map(_.filter(result,(o) => { return o.cohort_period === value }), 'percen')});
       });
       this.chartOptions = {
-        chart: { type: 'spline', zoomType: 'x'},
+        chart: { type: 'line', zoomType: 'x'},
         xAxis: {
           categories: _.map(_.uniqBy(result, 'period'), 'period'),
           title: {
@@ -47,7 +47,7 @@ export class GraficRetentionComponent implements OnChanges {
           valueSuffix: ' %'
         },
         plotOptions: {
-          spline: {
+          line: {
               marker: {
                   enabled: false
               },

@@ -29,7 +29,7 @@ export class GraficMAUComponent implements OnChanges {
         chart.push({ name: value, data: _.map(_.filter(result,(o) => { return o.cohort_period === value }), 'cumulative')});
       });
       this.chartOptions = {
-        chart: { type: 'spline', zoomType: 'x'},
+        chart: { type: 'line', zoomType: 'x'},
         xAxis: {
           categories: _.map(_.uniqBy(result, 'period'), 'period'),
           title: {
@@ -42,7 +42,7 @@ export class GraficMAUComponent implements OnChanges {
           }
         },
         plotOptions: {
-          spline: {
+          line: {
               marker: {
                   enabled: false
               },
