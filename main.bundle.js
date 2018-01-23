@@ -535,7 +535,7 @@ var GraficKIPComponent = /** @class */ (function () {
         var _this = this;
         this.convertService.convert('/convertkip').subscribe(function (result) {
             _this.chartOptions = {
-                chart: { type: 'spline', zoomType: 'x' },
+                chart: { type: 'line', zoomType: 'x' },
                 xAxis: {
                     type: 'datetime',
                     categories: __WEBPACK_IMPORTED_MODULE_3_lodash__["map"](result, 'period'),
@@ -549,7 +549,7 @@ var GraficKIPComponent = /** @class */ (function () {
                     }
                 },
                 plotOptions: {
-                    spline: {
+                    line: {
                         marker: {
                             enabled: false
                         },
@@ -732,7 +732,7 @@ var GraficMAUComponent = /** @class */ (function () {
                 chart.push({ name: value, data: __WEBPACK_IMPORTED_MODULE_3_lodash__["map"](__WEBPACK_IMPORTED_MODULE_3_lodash__["filter"](result, function (o) { return o.cohort_period === value; }), 'cumulative') });
             });
             _this.chartOptions = {
-                chart: { type: 'spline', zoomType: 'x' },
+                chart: { type: 'line', zoomType: 'x' },
                 xAxis: {
                     categories: __WEBPACK_IMPORTED_MODULE_3_lodash__["map"](__WEBPACK_IMPORTED_MODULE_3_lodash__["uniqBy"](result, 'period'), 'period'),
                     title: {
@@ -745,7 +745,7 @@ var GraficMAUComponent = /** @class */ (function () {
                     }
                 },
                 plotOptions: {
-                    spline: {
+                    line: {
                         marker: {
                             enabled: false
                         },
@@ -827,7 +827,7 @@ var GraficRetentionComponent = /** @class */ (function () {
                 chart.push({ name: value, data: __WEBPACK_IMPORTED_MODULE_3_lodash__["map"](__WEBPACK_IMPORTED_MODULE_3_lodash__["filter"](result, function (o) { return o.cohort_period === value; }), 'percen') });
             });
             _this.chartOptions = {
-                chart: { type: 'spline', zoomType: 'x' },
+                chart: { type: 'line', zoomType: 'x' },
                 xAxis: {
                     categories: __WEBPACK_IMPORTED_MODULE_3_lodash__["map"](__WEBPACK_IMPORTED_MODULE_3_lodash__["uniqBy"](result, 'period'), 'period'),
                     title: {
@@ -844,7 +844,7 @@ var GraficRetentionComponent = /** @class */ (function () {
                     valueSuffix: ' %'
                 },
                 plotOptions: {
-                    spline: {
+                    line: {
                         marker: {
                             enabled: false
                         },
