@@ -630,8 +630,10 @@ var GraficLayerComponent = /** @class */ (function () {
         var _this = this;
         this.convertService.convert('/convertxlayer').subscribe(function (result) {
             var chart = [];
+            var count = __WEBPACK_IMPORTED_MODULE_3_lodash__["map"](__WEBPACK_IMPORTED_MODULE_3_lodash__["uniqBy"](result, 'cohort_period'), 'cohort_period').length;
             __WEBPACK_IMPORTED_MODULE_3_lodash__["forEach"](__WEBPACK_IMPORTED_MODULE_3_lodash__["map"](__WEBPACK_IMPORTED_MODULE_3_lodash__["uniqBy"](result, 'cohort_period'), 'cohort_period'), function (value) {
-                chart.push({ name: value, data: __WEBPACK_IMPORTED_MODULE_3_lodash__["map"](__WEBPACK_IMPORTED_MODULE_3_lodash__["filter"](result, function (o) { return o.cohort_period === value; }), 'users') });
+                chart.push({ zIndex: count, name: value, data: __WEBPACK_IMPORTED_MODULE_3_lodash__["map"](__WEBPACK_IMPORTED_MODULE_3_lodash__["filter"](result, function (o) { return o.cohort_period === value; }), 'cumulative') });
+                count--;
             });
             _this.chartOptions = {
                 chart: {
@@ -655,6 +657,7 @@ var GraficLayerComponent = /** @class */ (function () {
                         marker: {
                             enabled: false
                         },
+                        fillOpacity: 1,
                     }
                 },
                 series: chart
