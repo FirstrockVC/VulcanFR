@@ -26,8 +26,10 @@ export class GraficLayerComponent implements OnChanges {
   public onGenerateReport(){
     this.convertService.convert('/convertxlayer').subscribe((result) => {
       const chart = [];
+      let count = _.map(_.uniqBy(result, 'cohort_period'), 'cohort_period').length;
       _.forEach(_.map(_.uniqBy(result, 'cohort_period'), 'cohort_period'),(value) => {
-        chart.push({ name: value, data: _.map(_.filter(result,(o) => { return o.cohort_period === value }), 'users')});
+        chart.push({ zIndex: count, name: value, data: _.map(_.filter(result,(o) => { return o.cohort_period === value }), 'cumulative')});
+        count--;
       });
     this.chartOptions = {
       chart: {
@@ -51,7 +53,9 @@ export class GraficLayerComponent implements OnChanges {
           marker: {
               enabled: false
           },
+          fillOpacity: 1,
       }
+
     },
     series: chart
     };
