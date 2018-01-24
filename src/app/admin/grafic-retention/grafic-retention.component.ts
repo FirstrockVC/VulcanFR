@@ -38,9 +38,14 @@ export class GraficRetentionComponent implements OnChanges {
         },
         yAxis: {
           type: 'porcentage',
-
+          max: 100,
           title: {
             text: 'Retention'
+          },
+          labels: {
+            formatter: function () {
+                return this.value + '%';
+            }
           }
         },
         tooltip: {
