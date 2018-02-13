@@ -8,8 +8,8 @@ export class ConvertService {
 
   constructor (private http: Http) {}
 
-  public uploadData(events): Observable<any> {
-    const data = { data: events, type: true }
+  public uploadData(events, period): Observable<any> {
+    const data = { data: events, type: true, period }
 		return this.http.post(`${Config.API}` + '/uploadFile', data)
 			.map(Config.extractData).catch(Config.handleError);
   }

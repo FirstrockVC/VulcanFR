@@ -4,7 +4,7 @@ import { Response } from '@angular/http';
 export class Config {
 
   public static get API(): string {
-    return 'https://evening-earth-64663.herokuapp.com';
+    return 'http://138.197.78.130:3000';
   }
 
   public static extractData(res: Response) {

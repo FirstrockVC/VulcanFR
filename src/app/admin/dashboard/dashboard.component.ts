@@ -25,6 +25,7 @@ export class DashboardComponent implements OnInit {
   public file;
   public data;
   public loadGraphic = false;
+  public period = "month";
 
   constructor( public convertService: ConvertService) { }
   ngOnInit() {
@@ -52,7 +53,7 @@ export class DashboardComponent implements OnInit {
     reader.readAsText(this.file);
     reader.onload = () => {
     let text = reader.result;
-    this.convertService.uploadData(text).subscribe((result) => {
+    this.convertService.uploadData(text, this.period).subscribe((result) => {
       this.loadGraphic = true;
         swal({
         title: 'Success',

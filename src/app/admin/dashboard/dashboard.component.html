@@ -19,9 +19,15 @@
       <div class="col-lg-12 col-xs-12">
         <!-- small box -->
             <form>
-                <div class="form-group" style="text-align: left;">
-                  <div>
-                      <div class="input-group input-file" name="Fichier1">
+                <div class="form-group" style="text-align: left;margin-right: 14px;">
+                  <div class="row">
+                      <div class="col-lg-4 form-group">
+                          <select placeholder='Period' [ngModelOptions]="{standalone: true}"  [(ngModel)]="period" class="form-control">
+                            <option value="week">Week</option>
+                            <option value="month">Month</option>
+                          </select>
+                        </div>
+                      <div class="col-lg-8 input-group input-file" name="Fichier1">
                           <input [ngModelOptions]="{standalone: true}" type="file" class="form-control" [(ngModel)]="data" (change)="onFileChange($event)" placeholder='Choose a file...' />
                           <span class="input-group-btn">
                                 <button class="btn btn-primary btn-reset" (click)="onUpload()" type="button">Upload</button>
