@@ -1,0 +1,7 @@
+/**
+ * @author Maria Fernanda Serna
+ */
+
+export const GET_REPORT_REQUEST = 'GET_REPORT_REQUEST';
+export const GET_REPORT_REQUEST_FAIL = 'GET_REPORT_REQUEST_FAIL';
+export const GET_REPORT_REQUEST_SUCCESS = 'GET_REPORT_REQUEST_SUCCESS';
