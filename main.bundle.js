@@ -1290,7 +1290,7 @@ var Config = /** @class */ (function () {
     }
     Object.defineProperty(Config, "API", {
         get: function () {
-            return 'http://138.197.78.130:3000';
+            return 'https://138.197.78.130:3000';
         },
         enumerable: true,
         configurable: true
