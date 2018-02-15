@@ -4,7 +4,7 @@ import { Response } from '@angular/http';
 export class Config {
 
   public static get API(): string {
-    return 'http://138.197.78.130:3000';
+    return 'https://138.197.78.130:3000';
   }
 
   public static extractData(res: Response) {

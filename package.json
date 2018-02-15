@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --env=prod --base-href '/dashboardFirstRockData/'",
+    "build": "ng build --env=prod --base-href '/VulcanFR/'",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

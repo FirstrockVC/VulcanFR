@@ -109,9 +109,9 @@ export class GraficHeatMapComponent implements OnChanges {
         }
       ]
     },
-      title: null,
+    title: { text : 'Heatmap'},
       legend: {
-          align: 'right',
+          align: 'left',
           layout: 'vertical',
           margin: 0,
           verticalAlign: 'top',

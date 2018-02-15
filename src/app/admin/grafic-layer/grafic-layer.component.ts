@@ -35,9 +35,7 @@ export class GraficLayerComponent implements OnChanges {
       chart: {
         type: 'area'
     },
-    title: {
-        text: null
-    },
+    title: { text : 'X-RAY'},
     xAxis: {
         categories: _.map(_.uniqBy(result, 'cohort_period'), 'cohort_period'),
         endOnTick: false,

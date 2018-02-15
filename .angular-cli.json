@@ -51,6 +51,7 @@
         "assets/js/adminLTEOptions.js",
         "assets/js/scripts.js",
         "../node_modules/highcharts",
+        "../node_modules/highcharts/modules/exporting.js",
         "../node_modules/highcharts-map",
         "../node_modules/sweetalert2/dist/sweetalert2.js"
       ],
