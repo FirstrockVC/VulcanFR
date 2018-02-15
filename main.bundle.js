@@ -279,7 +279,7 @@ var DashboardComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/admin/footer/footer.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<footer class=\"main-footer\">\n  <div class=\"pull-right hidden-xs\">\n    <b>Version</b> 1.0\n  </div>\n  <strong>Copyright &copy; 2017</strong>\n</footer>\n"
+module.exports = "<footer class=\"main-footer\">\n  <div class=\"pull-right hidden-xs\">\n    <b>Version</b> 1.0\n  </div>\n  <strong>Copyright &copy; 2018</strong>\n</footer>\n"
 
 /***/ }),
 
