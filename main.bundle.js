@@ -1,4 +1,4 @@
-webpackJsonp([3],{
+webpackJsonp([2],{
 
 /***/ "../../../../../src async recursive":
 /***/ (function(module, exports) {
@@ -190,7 +190,7 @@ var ControlSidebarComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/admin/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"content-wrapper\">\n  <!-- Content Header (Page header) -->\n  <section class=\"content-header\">\n    <h1>\n      Dashboard\n      <small>Control panel</small>\n    </h1>\n    <ol class=\"breadcrumb\">\n      <li><a href=\"#\"><i class=\"fa fa-dashboard\"></i> Home</a></li>\n      <li class=\"active\">Dashboard</li>\n    </ol>\n  </section>\n\n  <!-- Main content -->\n  <section class=\"content\">\n    <!-- Small boxes (Stat box) -->\n    <div class=\"row\">\n      <!-- ./col -->\n      <div class=\"col-lg-12 col-xs-12\">\n        <!-- small box -->\n            <form>\n                <div class=\"form-group\" style=\"text-align: left;\">\n                  <div>\n                      <div class=\"input-group input-file\" name=\"Fichier1\">\n                          <input [ngModelOptions]=\"{standalone: true}\" type=\"file\" class=\"form-control\" [(ngModel)]=\"data\" (change)=\"onFileChange($event)\" placeholder='Choose a file...' />\n                          <span class=\"input-group-btn\">\n                                <button class=\"btn btn-primary btn-reset\" (click)=\"onUpload()\" type=\"button\">Upload</button>\n                          </span>\n                      </div>\n                  </div>\n                </div>\n              </form>\n      </div>\n      <!-- ./col -->\n    </div>\n    <!-- /.row -->\n    <!-- Main row -->\n    <div class=\"row\">\n      <!-- Left col -->\n      <section class=\"col-lg-6 connectedSortable\">\n        <!-- Custom tabs (Charts with tabs)-->\n          <grafic-kip [loadGraphic]=\"loadGraphic\"></grafic-kip>\n        <!-- /.nav-tabs-custom -->\n      </section>\n      <!-- /.Left col -->\n      <!-- right col (We are only adding the ID to make the widgets sortable)-->\n      <section class=\"col-lg-6 connectedSortable\">\n        <!-- solid sales graph -->\n       <grafic-retention [loadGraphic]=\"loadGraphic\"></grafic-retention>\n        <!-- /.box -->\n      </section>\n      <!-- right col -->\n    </div>\n    <!-- /.row (main row) -->\n\n     <!-- Main row -->\n     <div class=\"row\">\n        <!-- Left col -->\n        <section class=\"col-lg-6 connectedSortable\">\n          <!-- Custom tabs (Charts with tabs)-->\n            <grafic-mau [loadGraphic]=\"loadGraphic\"></grafic-mau>\n          <!-- /.nav-tabs-custom -->\n        </section>\n        <!-- /.Left col -->\n        <!-- right col (We are only adding the ID to make the widgets sortable)-->\n        <section class=\"col-lg-6 connectedSortable\">\n            <!-- solid sales graph -->\n          <grafic-heatmap [loadGraphic]=\"loadGraphic\"></grafic-heatmap>\n            <!-- /.box -->\n          </section>\n          <!-- right col -->\n      </div>\n      <!-- /.row (main row) -->\n\n       <!-- Main row -->\n     <div class=\"row\">\n        <!-- Left col -->\n        <section class=\"col-lg-12 connectedSortable\">\n          <!-- Custom tabs (Charts with tabs)-->\n            <grafic-layer [loadGraphic]=\"loadGraphic\"></grafic-layer>\n          <!-- /.nav-tabs-custom -->\n        </section>\n        <!-- /.Left col -->\n      </div>\n      <!-- /.row (main row) -->\n\n      <div class=\"row\">\n        <!-- Left col -->\n        <section class=\"col-lg-12 connectedSortable\">\n          <!-- Custom tabs (Charts with tabs)\n            <grafic-topusers></grafic-topusers>-->\n          <!-- /.nav-tabs-custom -->\n        </section>\n        <!-- /.Left col -->\n      </div>\n\n  </section>\n  <!-- /.content -->\n</div>\n"
+module.exports = "<div class=\"content-wrapper\">\n  <!-- Content Header (Page header) -->\n  <section class=\"content-header\">\n    <h1>\n      Dashboard\n      <small>Control panel</small>\n    </h1>\n    <ol class=\"breadcrumb\">\n      <li><a href=\"#\"><i class=\"fa fa-dashboard\"></i> Home</a></li>\n      <li class=\"active\">Dashboard</li>\n    </ol>\n  </section>\n\n  <!-- Main content -->\n  <section class=\"content\">\n    <!-- Small boxes (Stat box) -->\n    <div class=\"row\">\n      <!-- ./col -->\n      <div class=\"col-lg-12 col-xs-12\">\n        <!-- small box -->\n            <form>\n                <div class=\"form-group\" style=\"text-align: left;margin-right: 14px;\">\n                  <div class=\"row\">\n                      <div class=\"col-lg-4 form-group\">\n                          <select placeholder='Period' [ngModelOptions]=\"{standalone: true}\"  [(ngModel)]=\"period\" class=\"form-control\">\n                            <option value=\"week\">Week</option>\n                            <option value=\"month\">Month</option>\n                          </select>\n                        </div>\n                      <div class=\"col-lg-8 input-group input-file\" name=\"Fichier1\">\n                          <input [ngModelOptions]=\"{standalone: true}\" type=\"file\" class=\"form-control\" [(ngModel)]=\"data\" (change)=\"onFileChange($event)\" placeholder='Choose a file...' />\n                          <span class=\"input-group-btn\">\n                                <button class=\"btn btn-primary btn-reset\" (click)=\"onUpload()\" type=\"button\">Upload</button>\n                          </span>\n                      </div>\n                  </div>\n                </div>\n              </form>\n      </div>\n      <!-- ./col -->\n    </div>\n    <!-- /.row -->\n    <!-- Main row -->\n    <div class=\"row\">\n      <!-- Left col -->\n      <section class=\"col-lg-6 connectedSortable\">\n        <!-- Custom tabs (Charts with tabs)-->\n          <grafic-kip [loadGraphic]=\"loadGraphic\"></grafic-kip>\n        <!-- /.nav-tabs-custom -->\n      </section>\n      <!-- /.Left col -->\n      <!-- right col (We are only adding the ID to make the widgets sortable)-->\n      <section class=\"col-lg-6 connectedSortable\">\n        <!-- solid sales graph -->\n       <grafic-retention [loadGraphic]=\"loadGraphic\"></grafic-retention>\n        <!-- /.box -->\n      </section>\n      <!-- right col -->\n    </div>\n    <!-- /.row (main row) -->\n\n     <!-- Main row -->\n     <div class=\"row\">\n        <!-- Left col -->\n        <section class=\"col-lg-6 connectedSortable\">\n          <!-- Custom tabs (Charts with tabs)-->\n            <grafic-mau [loadGraphic]=\"loadGraphic\"></grafic-mau>\n          <!-- /.nav-tabs-custom -->\n        </section>\n        <!-- /.Left col -->\n        <!-- right col (We are only adding the ID to make the widgets sortable)-->\n        <section class=\"col-lg-6 connectedSortable\">\n            <!-- solid sales graph -->\n          <grafic-heatmap [loadGraphic]=\"loadGraphic\"></grafic-heatmap>\n            <!-- /.box -->\n          </section>\n          <!-- right col -->\n      </div>\n      <!-- /.row (main row) -->\n\n       <!-- Main row -->\n     <div class=\"row\">\n        <!-- Left col -->\n        <section class=\"col-lg-12 connectedSortable\">\n          <!-- Custom tabs (Charts with tabs)-->\n            <grafic-layer [loadGraphic]=\"loadGraphic\"></grafic-layer>\n          <!-- /.nav-tabs-custom -->\n        </section>\n        <!-- /.Left col -->\n      </div>\n      <!-- /.row (main row) -->\n\n      <div class=\"row\">\n        <!-- Left col -->\n        <section class=\"col-lg-12 connectedSortable\">\n          <!-- Custom tabs (Charts with tabs)\n            <grafic-topusers></grafic-topusers>-->\n          <!-- /.nav-tabs-custom -->\n        </section>\n        <!-- /.Left col -->\n      </div>\n\n  </section>\n  <!-- /.content -->\n</div>\n"
 
 /***/ }),
 
@@ -219,6 +219,7 @@ var DashboardComponent = /** @class */ (function () {
     function DashboardComponent(convertService) {
         this.convertService = convertService;
         this.loadGraphic = false;
+        this.period = "month";
     }
     DashboardComponent.prototype.ngOnInit = function () {
         AdminLTE.init();
@@ -243,7 +244,7 @@ var DashboardComponent = /** @class */ (function () {
         reader.readAsText(this.file);
         reader.onload = function () {
             var text = reader.result;
-            _this.convertService.uploadData(text).subscribe(function (result) {
+            _this.convertService.uploadData(text, _this.period).subscribe(function (result) {
                 _this.loadGraphic = true;
                 __WEBPACK_IMPORTED_MODULE_2_sweetalert2___default()({
                     title: 'Success',
@@ -952,7 +953,7 @@ var GraficTopUsersComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/admin/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<header class=\"main-header\">\n  <!-- Logo -->\n  <a class=\"logo\">\n    <span class=\"logo-lg\"><b>FirstRock</b> Capital</span>\n  </a>\n  <!-- Header Navbar: style can be found in header.less -->\n  <nav class=\"navbar navbar-static-top\">\n    <!-- Sidebar toggle button-->\n    <a href=\"#\" class=\"sidebar-toggle\" data-toggle=\"offcanvas\" role=\"button\">\n        <span class=\"sr-only\">Toggle navigation</span>\n      </a>\n\n\n  </nav>\n</header>\n"
+module.exports = "<header class=\"main-header\">\n  <!-- Logo -->\n  <a class=\"logo\">\n    <span class=\"logo-lg\"><b>VulcanFR</b></span>\n  </a>\n  <!-- Header Navbar: style can be found in header.less -->\n  <nav class=\"navbar navbar-static-top\">\n    <!-- Sidebar toggle button-->\n    <a href=\"#\" class=\"sidebar-toggle\" data-toggle=\"offcanvas\" role=\"button\">\n        <span class=\"sr-only\">Toggle navigation</span>\n      </a>\n\n\n  </nav>\n</header>\n"
 
 /***/ }),
 
@@ -1107,8 +1108,8 @@ var ConvertService = /** @class */ (function () {
     function ConvertService(http) {
         this.http = http;
     }
-    ConvertService.prototype.uploadData = function (events) {
-        var data = { data: events, type: true };
+    ConvertService.prototype.uploadData = function (events, period) {
+        var data = { data: events, type: true, period: period };
         return this.http.post("" + __WEBPACK_IMPORTED_MODULE_2__utils_config__["a" /* Config */].API + '/uploadFile', data)
             .map(__WEBPACK_IMPORTED_MODULE_2__utils_config__["a" /* Config */].extractData).catch(__WEBPACK_IMPORTED_MODULE_2__utils_config__["a" /* Config */].handleError);
     };
@@ -1289,7 +1290,7 @@ var Config = /** @class */ (function () {
     }
     Object.defineProperty(Config, "API", {
         get: function () {
-            return 'https://evening-earth-64663.herokuapp.com';
+            return 'http://138.197.78.130:3000';
         },
         enumerable: true,
         configurable: true
@@ -1370,6 +1371,13 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 /***/ }),
 
 /***/ 3:
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 4:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("../../../../../src/main.ts");
@@ -1377,5 +1385,5 @@ module.exports = __webpack_require__("../../../../../src/main.ts");
 
 /***/ })
 
-},[3]);
+},[4]);
 //# sourceMappingURL=main.bundle.js.map
