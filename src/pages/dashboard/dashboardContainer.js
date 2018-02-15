@@ -4,15 +4,19 @@
 
 import {connect} from 'react-redux';
 import Dashboard from './dashboard';
-import { uploadData } from './../../reducers/upload/actions';
+import { uploadData,cleanReport } from './../../reducers/upload/actions';
 
 const mapStateToProps = state => ({
   ...state.upload,
+  ...state.report
 });
 
 const mapDispatchToProps = dispatch => ({
   uploadData: (events, period) => {
     dispatch(uploadData(events, period));
+  },
+  cleanReport: () => {
+    dispatch(cleanReport());
   },
 });
 

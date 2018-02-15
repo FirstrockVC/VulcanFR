@@ -2,17 +2,10 @@
  * @author Maria Fernanda Serna
  */
 import Config from '../utils/config';
-
+import axios from 'axios';
 
 const uploadData = (events, period) => {
-  return fetch(`${Config.API}` + '/uploadFile', {
-    method: 'POST',
-    headers: {
-      Accept: 'application/json',
-    },
-    body: JSON.stringify({ data: events, type: true, period }),
-  });
-
+  return axios.post(`${Config.API}/uploadFile`, { data: events, type: true, period });
 };
 
 const generateReport = report => {

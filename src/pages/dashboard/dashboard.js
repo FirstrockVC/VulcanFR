@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import GraphKipContainer from '../graphKip';
 
 class Dashboard extends Component {
 
@@ -12,16 +13,8 @@ class Dashboard extends Component {
     this.onFileChange = this.onFileChange.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.successUploadData) {
-      this.data = nextProps.data;
-      console.log(this.data);
-    }
-  }
-
   onFileChange(e) {
     this.setState({file:e.target.files[0]});
-    console.log(this.state.file);
   }
 
   onUpload() {
@@ -36,6 +29,7 @@ class Dashboard extends Component {
 
   render() {
     return (
+      <div>
       <div className="row">
         <div className="col-lg-4 form-group">
           <select placeholder='Period' className="form-control">
@@ -49,6 +43,10 @@ class Dashboard extends Component {
                 <button className="btn btn-primary btn-reset" onClick={() => this.onUpload()} type="button">Upload</button>
             </span>
          </div>
+      </div>
+      <div className="row">
+        <GraphKipContainer/>
+      </div>
       </div>
     );
   }

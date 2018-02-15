@@ -27,9 +27,16 @@ const upload = (state = initialState, action) => {
     case types.UPLOAD_REQUEST_SUCCESS:
       return {
         ...state,
-        data: action.payload,
+        data: action.payload.data,
         apiError: '',
         successUploadData: true,
+      };
+    case types.CLEAN_REPORT:
+      return {
+        ...state,
+        data: [],
+        apiError: '',
+        successUploadData: false,
       };
     default:
       return state;

@@ -3,7 +3,7 @@
  */
 
 import Dashboard from './dashboard';
-import DashboardContainer from './dashboardContainter';
+import DashboardContainer from './dashboardContainer';
 
 export { Dashboard };
 export default DashboardContainer;

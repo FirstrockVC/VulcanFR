@@ -1,8 +1,8 @@
 import React from 'react';
-const ReactHighmaps = require('react-highcharts/ReactHighmaps.src');
+const ReactHighcharts = require('react-highcharts');
 
 const GraphComponent = ({config}) => (
-  <ReactHighmaps config={config}/>
+  <ReactHighcharts config={config}/>
 );
 
 export default GraphComponent;

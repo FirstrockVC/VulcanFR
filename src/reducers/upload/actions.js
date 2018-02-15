@@ -25,18 +25,21 @@ export function uploadRequestSuccess(payload) {
   };
 }
 
+export function cleanReport() {
+  return {
+    type: types.CLEAN_REPORT,
+  };
+}
+
 export function uploadData (events, period) {
   return dispatch => {
     dispatch(uploadRequest());
     return convert
       .uploadData(events,period )
-      .then(response => response.json())
       .then(response => {
-        if (response.statusCode >= 400) {
-          return dispatch(uploadRequestFail('Could not load report'));
-        } else {
-          return dispatch(uploadRequestSuccess(response));
-        }
-      });
+        return dispatch(uploadRequestSuccess(response));
+      }).catch(error => {
+        return dispatch(uploadRequestFail(error));
+      });;
   };
 }
