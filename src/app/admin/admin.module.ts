@@ -16,13 +16,15 @@ import { GraficTopUsersComponent } from './grafic-topusers/grafic-topusers.compo
 
 import { FormsModule, ReactiveFormsModule }  from '@angular/forms';
 import { Ng2HighchartsModule } from 'ng2-highcharts';
+import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 
 @NgModule({
   imports: [
     CommonModule,
     RoutingModule,
     FormsModule,
-    Ng2HighchartsModule
+    Ng2HighchartsModule,
+    Ng4LoadingSpinnerModule
   ],
   declarations: [
     AdminComponent,

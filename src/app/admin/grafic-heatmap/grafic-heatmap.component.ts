@@ -49,63 +49,63 @@ export class GraficHeatMapComponent implements OnChanges {
             from: 0.00,
             to: 10.00,
             color: '#A3062A',
-            name: '0.00%'
+            name: '0%'
         }, {
             from: 10.00,
             to: 20.00,
             color: '#D5322F',
-            name: '10.00%'
+            name: '10%'
         }, {
             from: 20.00,
             to: 30.00,
             color: '#F26D4A',
-            name: '20.00%'
+            name: '20%'
         }, {
             from: 30.00,
             to: 40.00,
             color: '#FBAD68',
-            name: '30.00%'
+            name: '30%'
         },
         {
           from: 40.00,
           to: 50.00,
           color: '#FDDF90',
-          name: '40.00%'
+          name: '40%'
         },
         {
             from: 50.00,
             to: 60.00,
             color: '#FFFEC2',
-            name: '50.00%'
+            name: '50%'
         },
         {
           from: 60.00,
           to: 70.00,
           color: '#D9EE90',
-          name: '60.00%'
+          name: '60%'
         },
         {
           from: 70.00,
           to: 80.00,
           color: '#A7D770',
-          name: '70.00%'
+          name: '70%'
         },
         {
           from: 80.00,
           to: 90.00,
           color: '#69BC67',
-          name: '80.00%'
+          name: '80%'
         },
         {
           from: 90.00,
           to: 100.00,
           color: '#249753',
-          name: '90.00%'
+          name: '90%'
         },
         {
-          from: 1000.00,
+          from: 100.00,
           color: '#0B6739',
-          name: '100.00%'
+          name: '100%'
         }
       ]
     },

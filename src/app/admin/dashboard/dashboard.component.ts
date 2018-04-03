@@ -9,6 +9,7 @@ import * as moment from 'moment';
 import { ConvertService } from '../shared/convert.service';
 import { GraficMAUComponent } from '../grafic-mau/grafic-mau.component';
 import { GraficRetentionComponent } from '../grafic-retention/grafic-retention.component';
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 
 import swal from 'sweetalert2';
 
@@ -27,7 +28,7 @@ export class DashboardComponent implements OnInit {
   public loadGraphic = false;
   public period = "month";
 
-  constructor( public convertService: ConvertService) { }
+  constructor( public convertService: ConvertService, private spinnerService: Ng4LoadingSpinnerService) { }
   ngOnInit() {
     AdminLTE.init();
     jQuery('.connectedSortable').sortable({
@@ -53,6 +54,7 @@ export class DashboardComponent implements OnInit {
     reader.readAsText(this.file);
     reader.onload = () => {
     let text = reader.result;
+    this.spinnerService.show();
     this.convertService.uploadData(text, this.period).subscribe((result) => {
       this.loadGraphic = true;
         swal({
@@ -60,6 +62,7 @@ export class DashboardComponent implements OnInit {
         text: 'The data was imported correctly',
         type: 'success'
         });
+        this.spinnerService.hide();
      }, (error) => {
        swal({
          title: 'Error',
