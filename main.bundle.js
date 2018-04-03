@@ -16,7 +16,7 @@ webpackEmptyContext.id = "../../../../../src async recursive";
 /***/ "../../../../../src/app/admin/admin.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper\">\n\n  <app-admin-header></app-admin-header>\n  <!-- Left side column. contains the logo and sidebar -->\n  <app-admin-left-side></app-admin-left-side>\n\n  <!-- Content Wrapper. Contains page content -->\n  <router-outlet></router-outlet>\n  <!-- /.content-wrapper -->\n  <app-admin-footer></app-admin-footer>\n\n  <!-- Control Sidebar -->\n  <app-admin-control-sidebar></app-admin-control-sidebar>\n  <!-- /.control-sidebar -->\n</div>\n"
+module.exports = "<div class=\"wrapper\">\n  <app-spinner> </app-spinner>\n\n  <app-admin-header></app-admin-header>\n  <!-- Left side column. contains the logo and sidebar -->\n  <app-admin-left-side></app-admin-left-side>\n\n  <!-- Content Wrapper. Contains page content -->\n  <router-outlet></router-outlet>\n  <!-- /.content-wrapper -->\n  <app-admin-footer></app-admin-footer>\n\n  <!-- Control Sidebar -->\n  <app-admin-control-sidebar></app-admin-control-sidebar>\n  <!-- /.control-sidebar -->\n</div>\n"
 
 /***/ }),
 
@@ -52,7 +52,7 @@ var AdminComponent = /** @class */ (function () {
         this.body.classList.remove('sidebar-mini');
     };
     AdminComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Component */])({
             selector: 'app-admin',
             template: __webpack_require__("../../../../../src/app/admin/admin.component.html")
         }),
@@ -86,6 +86,7 @@ var AdminComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__grafic_topusers_grafic_topusers_component__ = __webpack_require__("../../../../../src/app/admin/grafic-topusers/grafic-topusers.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_ng2_highcharts__ = __webpack_require__("../../../../ng2-highcharts/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_ng4_loading_spinner__ = __webpack_require__("../../../../ng4-loading-spinner/ng4-loading-spinner.esm.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -93,6 +94,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -119,7 +121,8 @@ var AdminModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_8__angular_common__["e" /* CommonModule */],
                 __WEBPACK_IMPORTED_MODULE_0__routing_routing_module__["a" /* RoutingModule */],
                 __WEBPACK_IMPORTED_MODULE_15__angular_forms__["a" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_16_ng2_highcharts__["a" /* Ng2HighchartsModule */]
+                __WEBPACK_IMPORTED_MODULE_16_ng2_highcharts__["a" /* Ng2HighchartsModule */],
+                __WEBPACK_IMPORTED_MODULE_17_ng4_loading_spinner__["a" /* Ng4LoadingSpinnerModule */]
             ],
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_6__admin_component__["a" /* AdminComponent */],
@@ -174,7 +177,7 @@ var ControlSidebarComponent = /** @class */ (function () {
     ControlSidebarComponent.prototype.ngOnInit = function () {
     };
     ControlSidebarComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Component */])({
             selector: 'app-admin-control-sidebar',
             template: __webpack_require__("../../../../../src/app/admin/control-sidebar/control-sidebar.component.html"),
         }),
@@ -200,8 +203,9 @@ module.exports = "<div class=\"content-wrapper\">\n  <!-- Content Header (Page h
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_convert_service__ = __webpack_require__("../../../../../src/app/admin/shared/convert.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_sweetalert2__ = __webpack_require__("../../../../sweetalert2/dist/sweetalert2.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_sweetalert2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_sweetalert2__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng4_loading_spinner__ = __webpack_require__("../../../../ng4-loading-spinner/ng4-loading-spinner.esm.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_sweetalert2__ = __webpack_require__("../../../../sweetalert2/dist/sweetalert2.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_sweetalert2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_sweetalert2__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -215,9 +219,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var DashboardComponent = /** @class */ (function () {
-    function DashboardComponent(convertService) {
+    function DashboardComponent(convertService, spinnerService) {
         this.convertService = convertService;
+        this.spinnerService = spinnerService;
         this.loadGraphic = false;
         this.period = "month";
     }
@@ -244,15 +250,17 @@ var DashboardComponent = /** @class */ (function () {
         reader.readAsText(this.file);
         reader.onload = function () {
             var text = reader.result;
+            _this.spinnerService.show();
             _this.convertService.uploadData(text, _this.period).subscribe(function (result) {
                 _this.loadGraphic = true;
-                __WEBPACK_IMPORTED_MODULE_2_sweetalert2___default()({
+                __WEBPACK_IMPORTED_MODULE_3_sweetalert2___default()({
                     title: 'Success',
                     text: 'The data was imported correctly',
                     type: 'success'
                 });
+                _this.spinnerService.hide();
             }, function (error) {
-                __WEBPACK_IMPORTED_MODULE_2_sweetalert2___default()({
+                __WEBPACK_IMPORTED_MODULE_3_sweetalert2___default()({
                     title: 'Error',
                     text: 'An error occurs when importing the data',
                     type: 'error'
@@ -261,15 +269,15 @@ var DashboardComponent = /** @class */ (function () {
         };
     };
     DashboardComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Component */])({
             selector: 'app-admin-dashboard1',
             template: __webpack_require__("../../../../../src/app/admin/dashboard/dashboard.component.html"),
             providers: [__WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */]]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_ng4_loading_spinner__["b" /* Ng4LoadingSpinnerService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ng4_loading_spinner__["b" /* Ng4LoadingSpinnerService */]) === "function" && _b || Object])
     ], DashboardComponent);
     return DashboardComponent;
-    var _a;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=dashboard.component.js.map
@@ -305,7 +313,7 @@ var FooterComponent = /** @class */ (function () {
     FooterComponent.prototype.ngOnInit = function () {
     };
     FooterComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Component */])({
             selector: 'app-admin-footer',
             template: __webpack_require__("../../../../../src/app/admin/footer/footer.component.html")
         }),
@@ -385,63 +393,63 @@ var GraficHeatMapComponent = /** @class */ (function () {
                             from: 0.00,
                             to: 10.00,
                             color: '#A3062A',
-                            name: '0.00%'
+                            name: '0%'
                         }, {
                             from: 10.00,
                             to: 20.00,
                             color: '#D5322F',
-                            name: '10.00%'
+                            name: '10%'
                         }, {
                             from: 20.00,
                             to: 30.00,
                             color: '#F26D4A',
-                            name: '20.00%'
+                            name: '20%'
                         }, {
                             from: 30.00,
                             to: 40.00,
                             color: '#FBAD68',
-                            name: '30.00%'
+                            name: '30%'
                         },
                         {
                             from: 40.00,
                             to: 50.00,
                             color: '#FDDF90',
-                            name: '40.00%'
+                            name: '40%'
                         },
                         {
                             from: 50.00,
                             to: 60.00,
                             color: '#FFFEC2',
-                            name: '50.00%'
+                            name: '50%'
                         },
                         {
                             from: 60.00,
                             to: 70.00,
                             color: '#D9EE90',
-                            name: '60.00%'
+                            name: '60%'
                         },
                         {
                             from: 70.00,
                             to: 80.00,
                             color: '#A7D770',
-                            name: '70.00%'
+                            name: '70%'
                         },
                         {
                             from: 80.00,
                             to: 90.00,
                             color: '#69BC67',
-                            name: '80.00%'
+                            name: '80%'
                         },
                         {
                             from: 90.00,
                             to: 100.00,
                             color: '#249753',
-                            name: '90.00%'
+                            name: '90%'
                         },
                         {
-                            from: 1000.00,
+                            from: 100.00,
                             color: '#0B6739',
-                            name: '100.00%'
+                            name: '100%'
                         }
                     ]
                 },
@@ -476,7 +484,7 @@ var GraficHeatMapComponent = /** @class */ (function () {
         });
     };
     GraficHeatMapComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Component */])({
             selector: 'grafic-heatmap',
             template: __webpack_require__("../../../../../src/app/admin/grafic-heatmap/grafic-heatmap.component.html"),
             providers: [__WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */]],
@@ -571,7 +579,7 @@ var GraficKIPComponent = /** @class */ (function () {
         });
     };
     GraficKIPComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Component */])({
             selector: 'grafic-kip',
             template: __webpack_require__("../../../../../src/app/admin/grafic-kip/grafic-kip.component.html"),
             providers: [__WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */]],
@@ -670,7 +678,7 @@ var GraficLayerComponent = /** @class */ (function () {
         });
     };
     GraficLayerComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Component */])({
             selector: 'grafic-layer',
             template: __webpack_require__("../../../../../src/app/admin/grafic-layer/grafic-layer.component.html"),
             providers: [__WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */]],
@@ -765,7 +773,7 @@ var GraficMAUComponent = /** @class */ (function () {
         });
     };
     GraficMAUComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Component */])({
             selector: 'grafic-mau',
             template: __webpack_require__("../../../../../src/app/admin/grafic-mau/grafic-mau.component.html"),
             providers: [__WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */]],
@@ -870,7 +878,7 @@ var GraficRetentionComponent = /** @class */ (function () {
         });
     };
     GraficRetentionComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Component */])({
             selector: 'grafic-retention',
             template: __webpack_require__("../../../../../src/app/admin/grafic-retention/grafic-retention.component.html"),
             providers: [__WEBPACK_IMPORTED_MODULE_1__shared_convert_service__["a" /* ConvertService */]],
@@ -936,7 +944,7 @@ var GraficTopUsersComponent = /** @class */ (function () {
         };
     };
     GraficTopUsersComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Component */])({
             selector: 'grafic-topusers',
             template: __webpack_require__("../../../../../src/app/admin/grafic-topusers/grafic-topusers.component.html")
         })
@@ -977,7 +985,7 @@ var HeaderComponent = /** @class */ (function () {
     HeaderComponent.prototype.ngOnInit = function () {
     };
     HeaderComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Component */])({
             selector: 'app-admin-header',
             template: __webpack_require__("../../../../../src/app/admin/header/header.component.html"),
         }),
@@ -1019,7 +1027,7 @@ var LeftSideComponent = /** @class */ (function () {
     LeftSideComponent.prototype.ngOnInit = function () {
     };
     LeftSideComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Component */])({
             selector: 'app-admin-left-side',
             template: __webpack_require__("../../../../../src/app/admin/left-side/left-side.component.html")
         }),
@@ -1208,7 +1216,7 @@ var AppComponent = /** @class */ (function () {
         this.title = 'app';
     }
     AppComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Component */])({
             selector: 'app-root',
             template: __webpack_require__("../../../../../src/app/app.component.html"),
             styles: [__webpack_require__("../../../../../src/app/app.component.css")]
@@ -1233,6 +1241,7 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_highcharts__ = __webpack_require__("../../../../ng2-highcharts/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ng4_loading_spinner__ = __webpack_require__("../../../../ng4-loading-spinner/ng4-loading-spinner.esm.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1240,6 +1249,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1262,7 +1272,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_4__admin_admin_module__["a" /* AdminModule */],
                 __WEBPACK_IMPORTED_MODULE_7__angular_forms__["a" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_5_ng2_highcharts__["a" /* Ng2HighchartsModule */],
-                __WEBPACK_IMPORTED_MODULE_6__angular_http__["a" /* HttpModule */]
+                __WEBPACK_IMPORTED_MODULE_6__angular_http__["a" /* HttpModule */],
+                __WEBPACK_IMPORTED_MODULE_8_ng4_loading_spinner__["a" /* Ng4LoadingSpinnerModule */]
             ],
             providers: [],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */]]
